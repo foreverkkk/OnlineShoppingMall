@@ -338,7 +338,7 @@ public class JdbcUtil {
             password = properties.getProperty("password");
             Class.forName(driver);
         } catch (Exception e) {
-            throw new ExceptionInInitializerError(e);
+           e.printStackTrace();
         }
 }
     /**
@@ -415,7 +415,7 @@ public class JdbcUtil {
             // 在进行事务操作的时候，该行代码要进行改写 使用事务的 Connection ，如果不是事务，创建一个新的 Connection,在获取Connection连接时判断修改
             connection = getConnection();
             // 获得Statement对象
-            connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql);
             // 设置参数
             fillStatement(preparedStatement, params);
             // 使用Statement执行语句
@@ -451,7 +451,7 @@ public class JdbcUtil {
             // 将每条记录放到一个Map中
             Map<String,Object> map = new HashMap<String , Object>(16,0.75f);
             // resultSetMetaData.getColumnCount 获取表的列数
-            for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
+            for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
                 // 逐个字段读取出来放到Map中
                 map.put(resultSetMetaData.getColumnName(i) , resultSet.getObject(i));
             }

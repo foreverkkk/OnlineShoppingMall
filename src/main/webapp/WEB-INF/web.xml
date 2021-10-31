@@ -1,10 +1,25 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
 
-<web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+<!--  <servlet>-->
+<!--    &lt;!&ndash;    Servlet 程序别名（建议为类名）    &ndash;&gt;-->
+<!--    <servlet-name>AdminCateGory</servlet-name>-->
+<!--    &lt;!&ndash;    Servlet 程序的全类名    &ndash;&gt;-->
+<!--    <servlet-class>com.zk.servlet.AdminCategoryServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  &lt;!&ndash;  给 Servlet 程序配置访问地址  &ndash;&gt;-->
+<!--  <servlet-mapping>-->
+<!--    &lt;!&ndash;    告诉服务器，当前配置的地址给哪个 Servlet 程序使用    &ndash;&gt;-->
+<!--    <servlet-name>AdminCateGory</servlet-name>-->
+<!--    &lt;!&ndash;    配置访问地址  &ndash;&gt;-->
+<!--    <url-pattern>/adminCategoryServlet</url-pattern>-->
+<!--  </servlet-mapping>-->
 
-  
+
 </web-app>

@@ -9,7 +9,7 @@ public class JdbcUtilTest {
     public void insertTest(){
         String sql = "insert into category value(null,?,?)";
         Object []params = {
-                "裤子" , 1
+                "袜子" , 3
         };
         JdbcUtil.insert(sql , params);
     }

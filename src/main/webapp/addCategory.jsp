@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,7 +23,6 @@
 
         });
 
-    //
         function validateName(){
             let name = $('input[name="name"]');
             let result = $("#result");
@@ -34,14 +34,15 @@
             }
             return true;
         }
+
         // 验证非空
         function validateSort(){
-            let name = $('input[name="name"]');
+            let sort = $('input[name="sort"]');
             let result = $("#result");
             result.html("");
-            if (name.val()==null || $.trim(name.val())==""){
+            if (sort.val()==null || $.trim(sort.val())==""){
                 result.html("分类排序号不能为空！");
-                name.focus();
+                sort.focus();
                 return false;
             }
             // 验证是否为正整数
@@ -53,6 +54,7 @@
             }
             return true;
         }
+
         function validate(){
             if (validateName() && validateSort()){
                 $("#form1").submit();
@@ -72,7 +74,8 @@
         </li>
     </ul>
 </div>
-<form action="main.html" method="post" id="form1">
+<form action="<c:url value="/adminCategoryServlet"/>" method="post" id="form1">
+    <input type="hidden" name="action" value="add"/>
     <div class="formbody">
         <div class="formtitle">
             <span>添加分类</span>
@@ -88,12 +91,15 @@
                     <input name="sort" type="text" class="dfinput" style="width:278px;" onblur="validateSort()"/>
                 </div>
             </li>
-            <li><label style="color: red" id="result" >&nbsp;</label></li>
-            <li><label>&nbsp;</label><input name="" type="button" class="btn" value="添加" onclick="validate()"/>
+            <li><label style="color: red; width:278px;" id="result" >&nbsp; ${msg}</label></li>
+            <li><label>&nbsp;</label>
+<%--                <input name="" type="button" class="btn" value="添加" onclick="validate()"/>--%>
+                <input name="" type="submit" class="btn" value="添加"/>
             </li>
         </ul>
 
     </div>
+    <script>${msg}</script>
 </form>
 </body>
 </html>
