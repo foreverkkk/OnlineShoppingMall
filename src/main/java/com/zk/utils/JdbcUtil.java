@@ -449,7 +449,7 @@ public class JdbcUtil {
         // 循环读取Map中的每一条记录
         while (resultSet.next()){
             // 将每条记录放到一个Map中
-            Map<String,Object> map = new HashMap<String , Object>(16,0.75f);
+            Map<String,Object> map = new HashMap<String , Object>();
             // resultSetMetaData.getColumnCount 获取表的列数
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
                 // 逐个字段读取出来放到Map中

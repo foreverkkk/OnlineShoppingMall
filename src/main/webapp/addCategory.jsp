@@ -74,6 +74,7 @@
         </li>
     </ul>
 </div>
+
 <form action="<c:url value="/adminCategoryServlet"/>" method="post" id="form1">
     <input type="hidden" name="action" value="add"/>
     <div class="formbody">

@@ -20,6 +20,16 @@
 <!--    &lt;!&ndash;    配置访问地址  &ndash;&gt;-->
 <!--    <url-pattern>/adminCategoryServlet</url-pattern>-->
 <!--  </servlet-mapping>-->
+  <!--配置访问WEB-INF/jsp下的login.jsp文件的servlet-->
+<!--  <servlet>-->
+<!--    <servlet-name>index</servlet-name>-->
+<!--    <jsp-file>/WEB-INF/jsp/index.jsp</jsp-file>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>index</servlet-name>-->
+<!--    <url-pattern>/index</url-pattern>-->
+<!--  </servlet-mapping>-->
+
 
 
 </web-app>
